@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #0f172a; color: #e2e8f0; }
+    .container { max-width: 1100px; margin: auto; padding: 20px; }
+    h1, h2, h3 { margin-bottom: 10px; }
+    p { margin-bottom: 10px; color: #cbd5f5; }
+    a { color: #38bdf8; text-decoration: none; }
+    .btn { display: inline-block; padding: 10px 15px; background: #38bdf8; color: #0f172a; border-radius: 8px; margin-right: 10px; }
+
+    header { text-align: center; padding: 80px 20px; }
+    header h1 { font-size: 2.5rem; }
+
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
+    .card { background: #1e293b; padding: 20px; border-radius: 12px; }
+
+    .section { margin-top: 60px; }
+
+    footer { text-align: center; margin-top: 60px; padding: 20px; font-size: 0.9rem; color: #94a3b8; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Olá, sou o Carlos</h1>
+      <p>Web Developer focado em criar soluções reais para negócios</p>
+      <a href="#projects" class="btn">Ver Projetos</a>
+      <a href="#contact" class="btn">Contactar</a>
+    </div>
+  </header>
+
+  <section id="projects" class="container section">
+    <h2>Projetos</h2>
+    <div class="projects">
+
+      <div class="card">
+        <h3>Drivioo</h3>
+
+        <p><strong>Problema:</strong> Plataforma necessária para gerir reservas de transfers de forma eficiente.</p>
+        <p><strong>Solução:</strong> Desenvolvimento de uma aplicação web com lógica de reservas e gestão de utilizadores.</p>
+
+        <p><strong>O meu papel:</strong></p>
+        <p>- Desenvolvimento frontend e backend</p>
+        <p>- Implementação da lógica de reservas</p>
+        <p>- Integração com base de dados</p>
+
+        <p><strong>Desafios:</strong></p>
+        <p>- Validação e gestão de dados</p>
+        <p>- Organização da lógica de negócio</p>
+
+        <p><strong>Tecnologias:</strong> PHP, JavaScript, SQL, HTML, CSS</p>
+
+        <p><strong>Resultado:</strong> Aplicação funcional que melhora a organização das reservas e a experiência do utilizador.</p>
+
+        <a href="https://www.drivioo.com/" target="_blank">Ver Projeto</a>
+      </div>
+
+      <div class="card">
+        <h3>Battuta Experiences</h3>
+
+        <p><strong>Problema:</strong> Necessidade de presença online profissional para atrair clientes.</p>
+        <p><strong>Solução:</strong> Desenvolvimento de website com foco na apresentação clara dos serviços.</p>
+
+        <p><strong>O meu papel:</strong></p>
+        <p>- Desenvolvimento completo do website</p>
+        <p>- Estruturação do layout e navegação</p>
+
+        <p><strong>Desafios:</strong></p>
+        <p>- Criar estrutura intuitiva</p>
+        <p>- Garantir boa experiência em diferentes dispositivos</p>
+
+        <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
+
+        <p><strong>Resultado:</strong> Website funcional que melhora a presença online e facilita o contacto com clientes.</p>
+
+        <a href="https://www.battutaexperiences.pt/" target="_blank">Ver Projeto</a>
+      </div>
+
+      <div class="card">
+        <h3>Projeto Próprio</h3>
+
+        <p><strong>Problema:</strong> Necessidade de gerir reservas de forma simples e organizada.</p>
+        <p><strong>Solução:</strong> Sistema web com autenticação e gestão de dados (CRUD).</p>
+
+        <p><strong>O meu papel:</strong></p>
+        <p>- Desenvolvimento completo da aplicação</p>
+        <p>- Estruturação da base de dados</p>
+
+        <p><strong>Tecnologias:</strong> PHP, SQL, JavaScript</p>
+
+        <p><strong>Resultado:</strong> Sistema funcional para gestão de reservas com operações completas.</p>
+
+        <a href="#">Ver Projeto</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="container section">
+    <h2>Sobre Mim</h2>
+    <p>Sou web developer com experiência na criação de websites e aplicações para negócios reais. Trabalho com PHP, JavaScript e SQL para construir soluções funcionais e orientadas a resultados.</p>
+  </section>
+
+  <section class="container section">
+    <h2>Skills</h2>
+    <p><strong>Frontend:</strong> HTML, CSS, JavaScript</p>
+    <p><strong>Backend:</strong> PHP</p>
+    <p><strong>Base de Dados:</strong> SQL</p>
+  </section>
+
+  <section id="contact" class="container section">
+    <h2>Contacto</h2>
+    <p>Email: filipecarlos.cg@gmail.com</p>
+    <p>LinkedIn: linkedin.com/in/carlos-gomes-17a7931b8</p>
+  </section>
+
+  <footer>
+    <p>© 2026 - Carlos Gomes</p>
+  </footer>
+
+</body>
+</html>
