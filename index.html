@@ -11,162 +11,246 @@
     body {
       background: linear-gradient(135deg, #0f172a, #020617);
       color: #e2e8f0;
+      scroll-behavior: smooth;
     }
 
     .container { max-width: 1100px; margin: auto; padding: 20px; }
 
-    h1 { font-size: 2.8rem; font-weight: 700; }
-    h2 { font-size: 2rem; margin-bottom: 20px; }
-    h3 { margin-bottom: 10px; }
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      z-index: 1000;
+    }
 
-    p { margin-bottom: 10px; color: #cbd5f5; font-size: 0.95rem; }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-    a { color: #38bdf8; text-decoration: none; }
+    nav a {
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    /* HERO */
+    header {
+      text-align: center;
+      padding: 140px 20px 80px;
+    }
+
+    h1 { font-size: 3rem; font-weight: 700; }
+
+    header p {
+      font-size: 1.2rem;
+      margin: 20px 0;
+      opacity: 0.8;
+    }
 
     .btn {
       display: inline-block;
-      padding: 12px 18px;
+      padding: 12px 20px;
       background: linear-gradient(135deg, #38bdf8, #0ea5e9);
       color: #020617;
       border-radius: 10px;
-      margin-right: 10px;
+      margin: 10px;
       font-weight: 600;
       transition: 0.3s;
     }
 
     .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(56,189,248,0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(56,189,248,0.3);
     }
 
-    header {
-      text-align: center;
-      padding: 100px 20px 60px;
-    }
+    /* SECTIONS */
+    .section { margin-top: 100px; }
 
-    header p {
-      font-size: 1.2rem;
-      margin: 20px 0;
-    }
+    h2 { font-size: 2rem; margin-bottom: 25px; }
 
+    /* PROJECTS */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
+      gap: 30px;
     }
 
     .card {
       background: rgba(30, 41, 59, 0.6);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       padding: 25px;
-      border-radius: 16px;
-      transition: 0.3s;
+      border-radius: 18px;
+      transition: 0.4s;
       border: 1px solid rgba(255,255,255,0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(56,189,248,0.2), transparent);
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    .card:hover::before {
+      opacity: 1;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 40px rgba(0,0,0,0.4);
     }
 
-    .section { margin-top: 80px; }
+    p { font-size: 0.95rem; color: #cbd5f5; margin-bottom: 8px; }
 
+    /* SKILLS */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: rgba(56,189,248,0.1);
+      border: 1px solid rgba(56,189,248,0.3);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
-      margin-top: 80px;
+      margin-top: 100px;
       padding: 20px;
       font-size: 0.9rem;
       color: #94a3b8;
     }
 
+    /* ANIMATIONS */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @media(max-width: 600px) {
-      h1 { font-size: 2rem; }
-      header { padding: 60px 20px; }
+      h1 { font-size: 2.2rem; }
+      header { padding: 120px 20px 60px; }
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <!-- NAVBAR -->
+  <nav>
     <div class="container">
-      <h1>Olá, sou o Carlos</h1>
+      <strong>Portfolio</strong>
+      <div>
+        <a href="#projects">Projetos</a>
+        <a href="#contact">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header>
+    <div class="container fade-in">
+      <h1>Olá, sou [O TEU NOME]</h1>
       <p>Web Developer focado em criar soluções reais para negócios</p>
       <a href="#projects" class="btn">Ver Projetos</a>
       <a href="#contact" class="btn">Contactar</a>
     </div>
   </header>
 
-  <section id="projects" class="container section">
+  <!-- PROJECTS -->
+  <section id="projects" class="container section fade-in">
     <h2>Projetos</h2>
     <div class="projects">
 
       <div class="card">
         <h3>Drivioo</h3>
-
-        <p><strong>Problema:</strong> Plataforma necessária para gerir reservas de transfers de forma eficiente.</p>
-        <p><strong>Solução:</strong> Aplicação web com lógica de reservas e gestão de utilizadores.</p>
-
-        <p><strong>O meu papel:</strong></p>
-        <p>- Desenvolvimento frontend e backend</p>
-        <p>- Implementação da lógica de reservas</p>
-        <p>- Integração com base de dados</p>
-
-        <p><strong>Tecnologias:</strong> PHP, JavaScript, SQL</p>
-
+        <p><strong>Plataforma de gestão de reservas</strong></p>
+        <p>Aplicação web com lógica de reservas e gestão de utilizadores.</p>
+        <p><strong>Stack:</strong> PHP, JavaScript, SQL</p>
         <a href="https://www.drivioo.com/" target="_blank">Ver Projeto →</a>
       </div>
 
       <div class="card">
         <h3>Battuta Experiences</h3>
-
-        <p><strong>Problema:</strong> Necessidade de presença online profissional.</p>
-        <p><strong>Solução:</strong> Website com foco na apresentação clara dos serviços.</p>
-
-        <p><strong>O meu papel:</strong></p>
-        <p>- Desenvolvimento completo</p>
-        <p>- Estruturação do layout</p>
-
-        <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
-
+        <p><strong>Website para empresa de turismo</strong></p>
+        <p>Foco na apresentação clara de serviços e conversão.</p>
+        <p><strong>Stack:</strong> HTML, CSS, JavaScript</p>
         <a href="https://www.battutaexperiences.pt/" target="_blank">Ver Projeto →</a>
       </div>
 
       <div class="card">
         <h3>Projeto Próprio</h3>
-
-        <p><strong>Problema:</strong> Gestão simples de reservas.</p>
-        <p><strong>Solução:</strong> Sistema com autenticação e CRUD completo.</p>
-
-        <p><strong>Tecnologias:</strong> PHP, SQL, JavaScript</p>
-
+        <p><strong>Sistema de reservas</strong></p>
+        <p>Aplicação com autenticação e CRUD completo.</p>
+        <p><strong>Stack:</strong> PHP, SQL, JavaScript</p>
         <a href="#">Ver Projeto →</a>
       </div>
 
     </div>
   </section>
 
-  <section class="container section">
+  <!-- ABOUT -->
+  <section class="container section fade-in">
     <h2>Sobre Mim</h2>
     <p>Sou web developer com experiência na criação de websites e aplicações para negócios reais. Trabalho com PHP, JavaScript e SQL para construir soluções funcionais e orientadas a resultados.</p>
   </section>
 
-  <section class="container section">
+  <!-- SKILLS -->
+  <section class="container section fade-in">
     <h2>Skills</h2>
-    <p><strong>Frontend:</strong> HTML, CSS, JavaScript</p>
-    <p><strong>Backend:</strong> PHP</p>
-    <p><strong>Base de Dados:</strong> SQL</p>
+    <div class="skills">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">PHP</div>
+      <div class="skill">SQL</div>
+    </div>
   </section>
 
-  <section id="contact" class="container section">
+  <!-- CONTACT -->
+  <section id="contact" class="container section fade-in">
     <h2>Contacto</h2>
-    <p>Email: filipecarlos.cg@gmail.com</p>
-    <p>LinkedIn: linkedin.com/in/carlos-gomes-17a7931b8</p>
+    <p>Email: teuemail@email.com</p>
+    <p>LinkedIn: linkedin.com/in/teuperfil</p>
   </section>
 
   <footer>
     <p>© 2026 - O teu nome</p>
   </footer>
 
+  <script>
+    const elements = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    elements.forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>
+
