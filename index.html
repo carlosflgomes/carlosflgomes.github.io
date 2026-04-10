@@ -4,31 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meu Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    body { background: #0f172a; color: #e2e8f0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+    body {
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: #e2e8f0;
+    }
+
     .container { max-width: 1100px; margin: auto; padding: 20px; }
-    h1, h2, h3 { margin-bottom: 10px; }
-    p { margin-bottom: 10px; color: #cbd5f5; }
+
+    h1 { font-size: 2.8rem; font-weight: 700; }
+    h2 { font-size: 2rem; margin-bottom: 20px; }
+    h3 { margin-bottom: 10px; }
+
+    p { margin-bottom: 10px; color: #cbd5f5; font-size: 0.95rem; }
+
     a { color: #38bdf8; text-decoration: none; }
-    .btn { display: inline-block; padding: 10px 15px; background: #38bdf8; color: #0f172a; border-radius: 8px; margin-right: 10px; }
 
-    header { text-align: center; padding: 80px 20px; }
-    header h1 { font-size: 2.5rem; }
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #020617;
+      border-radius: 10px;
+      margin-right: 10px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
 
-    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
-    .card { background: #1e293b; padding: 20px; border-radius: 12px; }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(56,189,248,0.2);
+    }
 
-    .section { margin-top: 60px; }
+    header {
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
 
-    footer { text-align: center; margin-top: 60px; padding: 20px; font-size: 0.9rem; color: #94a3b8; }
+    header p {
+      font-size: 1.2rem;
+      margin: 20px 0;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 25px;
+      border-radius: 16px;
+      transition: 0.3s;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+    }
+
+    .section { margin-top: 80px; }
+
+    footer {
+      text-align: center;
+      margin-top: 80px;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+
+    @media(max-width: 600px) {
+      h1 { font-size: 2rem; }
+      header { padding: 60px 20px; }
+    }
   </style>
 </head>
 <body>
 
   <header>
     <div class="container">
-      <h1>Olá, sou o Carlos</h1>
+      <h1>Olá, sou [O TEU NOME]</h1>
       <p>Web Developer focado em criar soluções reais para negócios</p>
       <a href="#projects" class="btn">Ver Projetos</a>
       <a href="#contact" class="btn">Contactar</a>
@@ -43,60 +105,42 @@
         <h3>Drivioo</h3>
 
         <p><strong>Problema:</strong> Plataforma necessária para gerir reservas de transfers de forma eficiente.</p>
-        <p><strong>Solução:</strong> Desenvolvimento de uma aplicação web com lógica de reservas e gestão de utilizadores.</p>
+        <p><strong>Solução:</strong> Aplicação web com lógica de reservas e gestão de utilizadores.</p>
 
         <p><strong>O meu papel:</strong></p>
         <p>- Desenvolvimento frontend e backend</p>
         <p>- Implementação da lógica de reservas</p>
         <p>- Integração com base de dados</p>
 
-        <p><strong>Desafios:</strong></p>
-        <p>- Validação e gestão de dados</p>
-        <p>- Organização da lógica de negócio</p>
+        <p><strong>Tecnologias:</strong> PHP, JavaScript, SQL</p>
 
-        <p><strong>Tecnologias:</strong> PHP, JavaScript, SQL, HTML, CSS</p>
-
-        <p><strong>Resultado:</strong> Aplicação funcional que melhora a organização das reservas e a experiência do utilizador.</p>
-
-        <a href="https://www.drivioo.com/" target="_blank">Ver Projeto</a>
+        <a href="https://www.drivioo.com/" target="_blank">Ver Projeto →</a>
       </div>
 
       <div class="card">
         <h3>Battuta Experiences</h3>
 
-        <p><strong>Problema:</strong> Necessidade de presença online profissional para atrair clientes.</p>
-        <p><strong>Solução:</strong> Desenvolvimento de website com foco na apresentação clara dos serviços.</p>
+        <p><strong>Problema:</strong> Necessidade de presença online profissional.</p>
+        <p><strong>Solução:</strong> Website com foco na apresentação clara dos serviços.</p>
 
         <p><strong>O meu papel:</strong></p>
-        <p>- Desenvolvimento completo do website</p>
-        <p>- Estruturação do layout e navegação</p>
-
-        <p><strong>Desafios:</strong></p>
-        <p>- Criar estrutura intuitiva</p>
-        <p>- Garantir boa experiência em diferentes dispositivos</p>
+        <p>- Desenvolvimento completo</p>
+        <p>- Estruturação do layout</p>
 
         <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
 
-        <p><strong>Resultado:</strong> Website funcional que melhora a presença online e facilita o contacto com clientes.</p>
-
-        <a href="https://www.battutaexperiences.pt/" target="_blank">Ver Projeto</a>
+        <a href="https://www.battutaexperiences.pt/" target="_blank">Ver Projeto →</a>
       </div>
 
       <div class="card">
         <h3>Projeto Próprio</h3>
 
-        <p><strong>Problema:</strong> Necessidade de gerir reservas de forma simples e organizada.</p>
-        <p><strong>Solução:</strong> Sistema web com autenticação e gestão de dados (CRUD).</p>
-
-        <p><strong>O meu papel:</strong></p>
-        <p>- Desenvolvimento completo da aplicação</p>
-        <p>- Estruturação da base de dados</p>
+        <p><strong>Problema:</strong> Gestão simples de reservas.</p>
+        <p><strong>Solução:</strong> Sistema com autenticação e CRUD completo.</p>
 
         <p><strong>Tecnologias:</strong> PHP, SQL, JavaScript</p>
 
-        <p><strong>Resultado:</strong> Sistema funcional para gestão de reservas com operações completas.</p>
-
-        <a href="#">Ver Projeto</a>
+        <a href="#">Ver Projeto →</a>
       </div>
 
     </div>
@@ -116,12 +160,12 @@
 
   <section id="contact" class="container section">
     <h2>Contacto</h2>
-    <p>Email: filipecarlos.cg@gmail.com</p>
-    <p>LinkedIn: linkedin.com/in/carlos-gomes-17a7931b8</p>
+    <p>Email: teuemail@email.com</p>
+    <p>LinkedIn: linkedin.com/in/teuperfil</p>
   </section>
 
   <footer>
-    <p>© 2026 - Carlos Gomes</p>
+    <p>© 2026 - O teu nome</p>
   </footer>
 
 </body>
